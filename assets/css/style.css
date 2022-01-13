@@ -1,0 +1,1167 @@
+/****************************************************
+global styles
+*****************************************************/
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.4;
+    /* lepiej 1.5 */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+
+    font-family: 'Roboto', sans-serif;
+}
+
+h3 {
+    font-size: 30px;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* widht miałam bez "max"! 
+paddingu nie ustawiłam w ogóle*/
+.container {
+    max-width: 1170px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+@media (max-width: 700px) {
+
+    h3 {
+        font-size: 20px;
+    }
+}
+
+/****************************************************
+HEADERS
+*****************************************************/
+
+.global-header h3 {
+    color: #f4cb08;
+    font-size: 24px;
+    text-transform: uppercase;
+    margin: 0 0 15px 0;
+}
+
+.global-header h2 {
+    color: #111;
+    font-size: 36px;
+    text-transform: uppercase;
+    margin: 0 0 30px 0;
+}
+
+.global-header .line {
+    width: 80px;
+    height: 3px;
+    background-color: #f4cb08;
+    margin: 0 0 30px 0;
+}
+
+.global-header.center h3,
+.global-header.center h2 {
+    text-align: center;
+}
+
+.global-header.center .line {
+    margin: 0 auto 30px auto;
+}
+
+
+@media (max-width:700px) {
+    .global-header h3 {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .global-header h2 {
+        font-size: 26px;
+        text-align: center;
+    }
+
+    .global-header .line {
+        margin: 0 auto 30px auto;
+    }
+}
+
+
+/****************************************************
+BUTTONS
+*****************************************************/
+
+/* nadajemy główny button, najlepiej nazwany "primary", 
+a dalej modyfikujemy (na biały), a ja powtarzałam... 
+OPTYMALIZACJA!!!*/
+.btn {
+    display: inline-block;
+    color: #fff;
+    background-color: #f4cb08;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 10px 30px;
+    border-radius: 5px;
+    border: 2px solid #f4cb08;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background-color: #dcb707;
+    border-color: #dcb707;
+}
+
+/* lepiej pisać podwójnie klasę, żeby wiedzieć po czym 
+nadpisujemy, modyfikujemy jakąś klasę, obadać boodstrap buttons */
+.btn.btn-border-white {
+    background-color: transparent;
+    border: 2px solid #fff;
+    /* lepiej nie zmieniać w tym paddingu żeby wyrównać 
+    różnice bordera, bo może popieprzyć czcionki */
+}
+
+.btn.btn-border-white:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+@media (max-width: 700px) {
+
+    .btn {
+        margin: 0 auto;
+    }
+}
+
+/* nie działa, bo muszę złapać w container? */
+
+
+/****************************************************
+HEAD
+*****************************************************/
+/* czemu nie tag header? */
+.head {
+    background-image: url(../img/building\ site.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    padding: 90px 0 0 0;
+    position: relative;
+}
+
+/* 
+Wysłałaś wiadomość Dzisiaj o 20:16
+relative w head i w container?
+
+Piotr wysłał(a) Dzisiaj o 20:21
+tak 🙂 do container aby wyciagnac nawierz
+Piotr wysłał(a) Dzisiaj o 20:21
+i do head aby do niego działa absolut */
+
+.head .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    /* czemu relative nie do sekcji? container jest węższy... */
+}
+
+.head .overlay {
+    background-color: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* tu ustawiałam chyba po 50? A teraz zostawiliśmy 5%, 
+jak odległość między tekstem a ludkiem */
+.head .data {
+    width: 65%;
+}
+
+/* unikamy podawania konkretnych wysokości, 
+bo się nie będzie ładnie skalowało, odnosimy się procentowo
+do rodziców */
+.head .photo {
+    /* przypinamy dziecko do dołu */
+    align-self: flex-end;
+    width: 30%;
+}
+
+/* teraz nam się będzie obrazek skalować wraz 
+z divem rodzicem .photo */
+.head .photo img {
+    /* bez display block widht nie zadziała!!! */
+    display: block;
+    width: 100%;
+}
+
+.head .data h2 {
+    font-size: 24px;
+    font-weight: 400;
+    color: #f4cb08;
+    margin: 0 0 20px 0;
+}
+
+.head .data h1 {
+    font-size: 48px;
+    font-weight: 400;
+    color: #fff;
+    margin: 0 0 20px 0;
+}
+
+.head .data .line {
+    width: 100px;
+    height: 3px;
+    background-color: #f4cb08;
+    margin: 0 0 20px 0;
+}
+
+.head .data p {
+    color: #fff;
+    margin: 0 0 30px 0;
+}
+
+.head .data .buttons .btn:first-of-type {
+    margin: 0 30px 0 0;
+}
+
+@media (max-width:900px) {
+
+    .head {
+        padding: 60px 0 0 0;
+    }
+
+    .head .data {
+        width: 100%;
+        margin: 0 0 20px 0;
+    }
+
+    .head .photo {
+        width: 100%;
+    }
+
+    .head .photo img {
+        width: 40%;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width:600px) {
+
+    .head .photo img {
+        width: 50%;
+    }
+}
+
+@media (max-width:400px) {
+
+    .head .data h1 {
+        font-size: 40px;
+    }
+
+    .head .data .btn {
+        display: block;
+        text-align: center;
+    }
+
+    .head .data .buttons .btn:first-of-type {
+        margin: 0 0 20px 0;
+    }
+
+    .head .photo img {
+        width: 60%;
+    }
+}
+
+
+/****************************************************
+WELCOME
+*****************************************************/
+
+.welcome {
+    padding: 80px 0;
+}
+
+.welcome .container {
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.welcome .info,
+.welcome .description {
+    width: 50%;
+    padding: 0 15px;
+}
+
+.welcome .info p {
+    font-size: 24px;
+    font-style: italic;
+    line-height: 150%;
+    color: #b3b3b3;
+}
+
+.welcome .description p {
+    line-height: 150%;
+    color: #111;
+    margin: 0 0 30px 0;
+}
+
+@media (max-width:800px) {
+    .welcome .info {
+        width: 100%;
+    }
+
+    .welcome .description {
+        width: 100%;
+    }
+
+    .welcome .info p {
+        font-size: 18px;
+    }
+
+    .welcome {
+        padding: 60px 0;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .welcome {
+        padding: 40px 0;
+    }
+}
+
+
+/****************************************************
+OFFER
+*****************************************************/
+
+.offer {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.offer .item {
+    width: calc(100%/3);
+    min-height: 300px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+.offer .item:hover .overlay {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.offer .overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: 0.3s;
+}
+
+.offer .item h3 {
+    color: #fff;
+    text-transform: uppercase;
+    z-index: 1;
+    font-size: 24px;
+    margin: 0 0 20px 0;
+}
+
+.offer .item .line {
+    width: 75px;
+    height: 3px;
+    background-color: #f4cb08;
+    margin: 0 0 30px 0;
+    z-index: 1;
+}
+
+.offer .item p {
+    color: #fff;
+    font-size: 16px;
+    line-height: 150%;
+    z-index: 1;
+    margin: 0;
+}
+
+@media (max-width:900px) {
+
+    .offer .item {
+        width: 100%;
+        min-height: 250px;
+    }
+}
+
+
+/****************************************************
+SERVICES
+*****************************************************/
+
+.services {
+    padding: 80px 0 20px 0;
+}
+
+.services .container {
+    padding: 0;
+}
+
+/* ale czekaj, czemu to problem z ty tekstem?
+Wysłałaś wiadomość Wczoraj o 20:55
+znaczy containerem
+Wysłałaś wiadomość Wczoraj o 20:56
+czemu tu jest to problem a tam powyżej nie
+Piotr wysłał(a) Wczoraj o 20:56
+bo tam nie było wrapera
+Wysłałaś wiadomość Wczoraj o 20:56
+a czemu teraz tak nie mozemy?
+Piotr Arciszewski
+Piotr wysłał(a) Wczoraj o 20:57
+wraperem był container
+Piotr wysłał(a) Wczoraj o 20:57
+wiec nie dasz tam margin : - 15px
+Piotr wysłał(a) Wczoraj o 20:57
+bo nie zadziała nam auto
+ */
+
+.services .global-header {
+    margin: 0 0 80px 0;
+}
+
+.services .icons {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.services .icons .item {
+    display: flex;
+    width: calc(100%/3);
+    padding: 0 15px;
+    margin: 0 0 60px 0;
+}
+
+.services .icons .item .icon {
+    /* flex grow - flex shrink - flex basis */
+    flex: 0 0 65px;
+    margin: 0 15px 0 0;
+    font-size: 30px;
+    -webkit-text-stroke: 1.3px #111;
+    color: transparent;
+    width: 65px;
+    height: 65px;
+    border: 2px solid #f4cb08;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 64px;
+}
+
+.services .icons .item .data .title {
+    margin: 0 0 20px 0;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.services .icons .item .data .desc {
+    margin: 0;
+}
+
+@media (max-width: 900px) {
+
+    .services .icons .item {
+        width: 50%;
+    }
+}
+
+@media (max-width: 800px) {
+
+    .services {
+        padding: 60px 0 0 0;
+    }
+
+    .services .global-header {
+        margin: 0 0 60px 0;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .services {
+        padding: 40px 0 0 0;
+    }
+
+    .services .global-header {
+        margin: 0 0 40px 0;
+    }
+
+    .services .icons .item {
+        width: 100%;
+        margin: 0 0 40px 0;
+
+    }
+}
+
+
+/****************************************************
+PORTFOLIO
+*****************************************************/
+
+.portfolio {
+    width: 100%;
+    background-color: #2c2c2c;
+    padding: 80px 0 0 0;
+}
+
+.portfolio .global-header {
+    margin: 0 0 60px 0;
+}
+
+.portfolio .global-header h2 {
+    color: #fff;
+}
+
+.portfolio .photos {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.portfolio .photos .photo {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 25%;
+    min-height: 300px;
+}
+
+/* .portfolio .photos .photo img {
+    width: 100%;
+} */
+
+@media (max-width: 1200px) {
+
+    .portfolio .photos .photo {
+        width: 50%;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .portfolio .photos .photo {
+        width: 100%;
+    }
+}
+
+
+/****************************************************
+TEAM
+*****************************************************/
+
+.team {
+    padding: 80px 0 60px 0;
+}
+
+.team .container {
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.team .info,
+.team .map {
+    width: 50%;
+    padding: 0 15px;
+}
+
+.team .map img {
+    max-width: 100%;
+}
+
+.team .info p {
+    line-height: 150%;
+    color: #111;
+    margin: 0 0 30px 0;
+}
+
+@media (max-width: 800px) {
+
+    .team .map {
+        width: 100%;
+    }
+
+    .team .info {
+        width: 100%;
+    }
+
+    .team {
+        padding: 0 0 60px 0;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .team {
+        padding: 0 0 40px 0;
+    }
+}
+
+
+/****************************************************
+NUMBERS
+*****************************************************/
+
+.numbers {
+    background-image: url(../img/interior.jpg);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    padding: 80px 0 60px 0;
+}
+
+.numbers .overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.numbers .container {
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.numbers .item {
+    z-index: 1;
+    width: 25%;
+    padding: 0 15px;
+}
+
+.numbers .item h3 {
+    color: #f4cb08;
+    font-size: 30px;
+    text-transform: uppercase;
+    margin: 0 0 15px 0;
+    text-align: center;
+}
+
+.numbers .item p {
+    color: #fff;
+    margin: 0 0 30px 0;
+    text-align: center;
+}
+
+.numbers .item .line {
+    width: 60px;
+    height: 3px;
+    background-color: #f4cb08;
+    margin: 0 auto 20px auto;
+}
+
+@media (max-width: 800px) {
+
+    .numbers {
+        padding: 60px 0 20px 0;
+    }
+
+    .numbers .item {
+        width: 50%;
+        margin: 0 0 20px 0;
+    }
+
+    .numbers .item h3 {
+        margin: 0;
+    }
+
+    .numbers .item p {
+        margin: 0 0 20px 0;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .numbers {
+        padding: 40px 0 0 0;
+    }
+}
+
+@media (max-width: 400px) {
+
+    .numbers .item {
+        width: 100%;
+    }
+}
+
+
+/****************************************************
+STEPS
+*****************************************************/
+
+.steps {
+    padding: 80px 0 40px 0;
+}
+
+.steps .global-header {
+    margin: 0 0 80px 0;
+}
+
+.steps .global-header h3 {
+    font-weight: 400;
+}
+
+.steps .items {
+    padding: 0 -15px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.steps .items .step {
+    padding: 0 15px;
+    width: 25%;
+}
+
+.steps .items .step h3 {
+    text-align: center;
+    font-weight: 400;
+    margin: 0 0 20px 0;
+}
+
+.steps .items .step .icon {
+    margin: 0 auto 30px auto;
+    font-size: 45px;
+    width: 90px;
+    height: 90px;
+    background-color: #f4cb08;
+    -webkit-text-stroke: 1.3px #fff;
+    color: transparent;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 90px;
+}
+
+.steps .items .step p {
+    text-align: center;
+    margin: 0 0 40px 0;
+}
+
+@media (max-width: 900px) {
+
+    .steps .items .step {
+        width: 50%;
+    }
+}
+
+@media (max-width: 800px) {
+
+    .steps {
+        padding: 60px 0 20px 0;
+    }
+
+    .steps .global-header {
+        margin: 0 0 60px 0;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .steps {
+        padding: 40px 0 0 0;
+    }
+
+    .steps .global-header {
+        margin: 0 0 40px 0;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .steps .items .step {
+        width: 100%;
+    }
+}
+
+
+/****************************************************
+TESTIMONIALS
+*****************************************************/
+
+.test {
+    background-color: #2c2c2c;
+    padding: 80px 0 40px 0;
+}
+
+.test .global-header {
+    margin: 0 0 60px 0;
+}
+
+.test .global-header h3 {
+    font-size: 30px;
+    font-weight: 400;
+}
+
+.test .global-header h2 {
+    font-weight: 400;
+    color: #fff;
+}
+
+.test .reviews {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+}
+
+/* jeśli content jest złapany we wraper 
+(tutaj reviews), to dajemy ujemny margin dla niego,
+ żeby wyrównać z krawędzią continera, kolumny, 
+ którym nadaiśmy padding */
+
+.test .reviews .customer {
+    width: calc(100%/3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 15px;
+}
+
+.test .reviews .customer .border {
+    border: 2px solid #b3b3b3;
+    padding: 30px 30px 100px 30px;
+    height: 100%;
+}
+
+.test .reviews .customer p {
+    color: #fff;
+    text-align: center;
+    margin: 0;
+}
+
+.test .reviews .customer .info {
+    margin: -50px 0 0 0;
+}
+
+.test .reviews .customer .info img {
+    display: block;
+    margin: 0 auto 20px auto;
+}
+
+.test .reviews .customer .info .name {
+    font-size: 30px;
+    margin: 0 0 20px 0;
+}
+
+.test .reviews .customer .info .prof {
+    font-size: 24px;
+    color: #f4cb08;
+    margin: 0 0 40px 0;
+}
+
+.test .reviews .customer .border .info {
+    bottom: -150px;
+}
+
+@media (max-width:800px) {
+
+    .test {
+        padding: 60px 0 20px 0;
+    }
+
+    .test .reviews .customer {
+        width: 100%;
+    }
+
+    .test .reviews .customer .border {
+        padding: 30px 60px 100px 60px;
+    }
+}
+
+@media (max-width:800px) {
+
+    .test .global-header h3 {
+        font-size: 24px;
+        font-weight: 400;
+    }
+}
+
+@media (max-width: 700px) {
+
+    .test .reviews .customer .info .name {
+        font-size: 24px;
+    }
+
+    .test .reviews .customer .info .prof {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .test {
+        padding: 40px 0 0 0;
+    }
+
+    .test .global-header {
+        margin: 0 0 40px 0;
+    }
+
+    .test .reviews .customer .border {
+        padding: 30px 30px 100px 30px;
+    }
+}
+
+
+/****************************************************
+CERTIFICATES
+*****************************************************/
+
+.certificates {
+    padding: 80px 0 40px 0;
+    background-color: #171717;
+}
+
+.certificates .container {
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.certificates .logo {
+    padding: 0 15px;
+    margin: 0 0 40px 0;
+}
+
+.certificates .logo img {
+    display: block;
+    width: 100%;
+    width: 120px;
+    margin: 0 auto;
+
+}
+
+@media (max-width: 950px) {
+
+    .certificates .logo {
+        width: calc(100%/3);
+    }
+}
+
+@media (max-width: 800px) {
+
+    .certificates {
+        padding: 60px 0 20px 0;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .certificates {
+        padding: 40px 0 0 0;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .certificates .logo {
+        width: 50%;
+    }
+}
+
+
+/****************************************************
+BLOG
+*****************************************************/
+
+.blog {
+    padding: 80px 0;
+}
+
+.blog .container {
+    padding: 0;
+}
+
+.blog .global-header {
+    margin: 0 0 40px 0;
+}
+
+.blog .global-header h3 {
+    font-size: 30px;
+    font-weight: 400;
+}
+
+.blog .blog-posts {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.blog .blog-posts .post {
+    padding: 0 15px;
+    width: calc(100%/3);
+}
+
+.blog .blog-posts .post img {
+    width: 100%;
+    margin: 0 0 30px 0;
+}
+
+.blog .blog-posts .post h3 {
+    font-weight: 400;
+    margin: 0 0 10px 0;
+}
+
+.blog .blog-posts .post .date {
+    font-weight: 400;
+    margin: 0 0 30px 0;
+    color: #b3b3b3;
+}
+
+.blog .blog-posts .post p {
+    margin: 0 0 30px 0;
+}
+
+.blog .blog-posts .post .btn-blog {
+    text-transform: uppercase;
+    color: #000;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 0 0 3px 0;
+    width: 100%;
+    border-bottom: 1px solid #000;
+    transition: 0.3s;
+}
+
+.blog .blog-posts .post .btn-blog:hover {
+    color: #f4cb08;
+    border-bottom: 1px solid #f4cb08;
+
+}
+
+@media (max-width:900px) {
+
+    .blog .blog-posts .post {
+        width: 50%;
+    }
+
+    .blog .blog-posts .post:last-child {
+        margin: 40px 0 0 0;
+    }
+}
+
+@media (max-width:800px) {
+
+    .blog .global-header h3 {
+        font-size: 24px;
+    }
+
+    .blog {
+        padding: 60px 0;
+    }
+}
+
+@media (max-width:600px) {
+
+    .blog {
+        padding: 40px 0;
+    }
+
+    .blog .blog-posts .post {
+        width: 100%;
+    }
+
+    .blog .blog-posts .post:nth-child(2) {
+        margin: 40px 0 0 0;
+    }
+}
+
+
+/****************************************************
+FOOTER
+*****************************************************/
+
+footer {
+    padding: 80px 40px;
+    background-color: #f4cb08;
+}
+
+footer .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+footer .text h2 {
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 48px;
+    font-weight: 400;
+    margin: 0 0 20px 0;
+}
+
+footer .text p {
+    color: #fff;
+    margin: 0;
+}
+
+footer .btn.btn-border-white {
+    margin: 10px 0 0 0;
+}
+
+@media (max-width:850px) {
+
+    footer .text {
+        width: 100%;
+    }
+
+    footer .text p {
+        margin: 0 0 80px 0;
+    }
+
+    footer .btn.btn-border-white {
+        margin: 0;
+    }
+}
+
+@media (max-width:600px) {
+
+    footer {
+        padding: 60px 0;
+    }
+
+    footer .text p {
+        margin: 0 0 40px 0;
+        text-align: center;
+
+    }
+
+    footer .text h2 {
+        font-size: 36px;
+        text-align: center;
+    }
+
+    footer .container {
+        justify-content: center;
+    }
+}
